@@ -20,7 +20,14 @@ class NewsFeed extends StatelessWidget {
           builder: (BuildContext context, NewsState state) {
             if (state is LoadingNewsState) {
               _newsBloc.add(LoadNewsEvent());
-              return Center(child: CircularProgressIndicator());
+              return Column(
+                children: <Widget>[
+                  Center(
+                    child: Text('getting the latest news'),
+                  ),
+                  Center(child: CircularProgressIndicator()),
+                ],
+              );
             }
 
             if (state is LoadedNewsState) {
