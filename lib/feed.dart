@@ -21,6 +21,8 @@ class NewsFeed extends StatelessWidget {
             if (state is LoadingNewsState) {
               _newsBloc.add(LoadNewsEvent());
               return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Center(
                     child: Text('getting the latest news'),
